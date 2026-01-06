@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Studio Photography & Videography for professional photo and video services">
+    <title>Contact Us - Studio Photography & Videography</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="login.html" class="login-link">Login</a></li>
+                </ul>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-fade-in">Get in Touch</h1>
+            <p class="page-subtitle animate-fade-in">Let's discuss your vision and bring your story to life</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-container animate-on-scroll">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="wedding">Wedding Photography</option>
+                                <option value="portrait">Portrait Session</option>
+                                <option value="event">Event Coverage</option>
+                                <option value="commercial">Commercial Photography</option>
+                                <option value="videography">Videography Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="serviceError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDate">Preferred Date</label>
+                            <input type="date" id="eventDate" name="eventDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required
+                                placeholder="Tell us about your project, vision, and any specific requirements..."></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Subscribe to our newsletter for photography tips and special offers</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Send Message
+                        </button>
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-container animate-on-scroll">
+                    <div class="contact-info-card">
+                        <h2>Contact Information</h2>
+                        <p>We're here to answer your questions and discuss your creative vision.</p>
+
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@studiophotography.com">info@studiophotography.com</a></p>
+                                <p><a href="mailto:bookings@studiophotography.com">bookings@studiophotography.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📱</div>
+                            <div class="info-content">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                                <p>Sat: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-content">
+                                <h3>Studio Address</h3>
+                                <p>123 Creative Avenue</p>
+                                <p>Studio City, SC 12345</p>
+                                <p>United States</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">🌐</div>
+                            <div class="info-content">
+                                <h3>Follow Us</h3>
+                                <div class="social-links-large">
+                                    <a href="#" aria-label="Instagram">📷 Instagram</a>
+                                    <a href="#" aria-label="Facebook">👥 Facebook</a>
+                                    <a href="#" aria-label="Twitter">🐦 Twitter</a>
+                                    <a href="#" aria-label="YouTube">📺 YouTube</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours-card">
+                        <h3>Business Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                        <p class="hours-note">*After-hours appointments available by request</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-placeholder animate-on-scroll">
+                <span class="placeholder-icon">🗺️</span>
+                <p>Studio Location Map</p>
+                <small>123 Creative Avenue, Studio City, SC 12345</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Studio</h3>
+                    <p>Professional Photography & Videography services capturing your precious moments with artistic
+                        excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 info@studiophotography.com</li>
+                        <li>📱 +1 (555) 123-4567</li>
+                        <li>📍 123 Creative Ave, Studio City</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">👥</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Contact Form Validation and Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            document.querySelectorAll('.form-group input, .form-group select, .form-group textarea')
+                .forEach(el => el.classList.remove('error'));
+
+            let isValid = true;
+            const formData = new FormData(this);
+
+            // Validate Name
+            const name = formData.get('name').trim();
+            if (name.length < 2) {
+                showError('name', 'Please enter your full name');
+                isValid = false;
+            }
+
+            // Validate Email
+            const email = formData.get('email').trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Validate Phone (optional but format check if provided)
+            const phone = formData.get('phone').trim();
+            if (phone && phone.length < 10) {
+                showError('phone', 'Please enter a valid phone number');
+                isValid = false;
+            }
+
+            // Validate Service
+            const service = formData.get('service');
+            if (!service) {
+                showError('service', 'Please select a service');
+                isValid = false;
+            }
+
+            // Validate Message
+            const message = formData.get('message').trim();
+            if (message.length < 10) {
+                showError('message', 'Please provide more details (at least 10 characters)');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show success message
+                const formMessage = document.getElementById('formMessage');
+                formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+
+                // Reset form
+                this.reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            field.classList.add('error');
+            errorElement.textContent = message;
+        }
+    </script>
+</body>
+
+</html>

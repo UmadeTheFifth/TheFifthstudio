@@ -1,0 +1,101 @@
+/* ===================================
+   PREMIUM THEME VARIABLES
+   ================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400&display=swap');
+
+:root {
+    /* Premium Beige Light Theme */
+    --primary-bg: #f8f5f1;
+    --secondary-bg: #ede8e3;
+    --tertiary-bg: #fdfcfb;
+    --card-bg: #ffffff;
+
+    --primary-text: #2b2520;
+    --secondary-text: #5a534d;
+    --muted-text: #8b857f;
+
+    --primary-color: #a0896f;
+    --primary-hover: #8a7460;
+    --secondary-color: #c9b8a3;
+    --accent-color: #d4c4b0;
+
+    --border-color: #e5dfd8;
+    --shadow-light: rgba(160, 137, 111, 0.06);
+    --shadow-medium: rgba(160, 137, 111, 0.12);
+    --shadow-heavy: rgba(160, 137, 111, 0.20);
+
+    --overlay-bg: rgba(248, 245, 241, 0.96);
+    --modal-overlay: rgba(43, 37, 32, 0.75);
+
+    /* Typography */
+    --font-heading: 'Antic Didone', serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Success, Warning, Error */
+    --success-color: #7a9270;
+    --warning-color: #c9a57a;
+    --error-color: #b87f73;
+
+    /* Transitions */
+    --transition-speed: 0.4s;
+    --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme - Refined */
+    --primary-bg: #1a1714;
+    --secondary-bg: #242220;
+    --tertiary-bg: #2d2a27;
+    --card-bg: #2d2a27;
+
+    --primary-text: #f5f2ef;
+    --secondary-text: #c9c5c1;
+    --muted-text: #9a9691;
+
+    --primary-color: #c9b8a3;
+    --primary-hover: #d4c4b0;
+    --secondary-color: #a0896f;
+    --accent-color: #8a7460;
+
+    --border-color: #3a3734;
+    --shadow-light: rgba(0, 0, 0, 0.15);
+    --shadow-medium: rgba(0, 0, 0, 0.25);
+    --shadow-heavy: rgba(0, 0, 0, 0.40);
+
+    --overlay-bg: rgba(26, 23, 20, 0.96);
+    --modal-overlay: rgba(0, 0, 0, 0.85);
+
+    /* Success, Warning, Error */
+    --success-color: #8fa585;
+    --warning-color: #d4b890;
+    --error-color: #c99488;
+}
+
+/* Smooth Theme Transitions */
+* {
+    transition: background-color var(--transition-speed) var(--transition-timing),
+        color var(--transition-speed) var(--transition-timing),
+        border-color var(--transition-speed) var(--transition-timing);
+}
+
+/* Preserve specific transitions */
+a,
+button,
+input,
+textarea,
+select,
+.gallery-item,
+.lightbox,
+.service-card,
+.team-member,
+img,
+.image-wrapper {
+    transition: background-color var(--transition-speed) var(--transition-timing),
+        color var(--transition-speed) var(--transition-timing),
+        border-color var(--transition-speed) var(--transition-timing),
+        transform 0.6s var(--transition-smooth),
+        opacity 0.6s var(--transition-smooth),
+        box-shadow 0.4s var(--transition-smooth);
+}

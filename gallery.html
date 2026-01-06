@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personalized photography and videography gallery">
+    <title>Your Gallery - Studio Photography & Videography</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="#" class="logout-link" id="logoutBtn">Logout</a></li>
+                </ul>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <div class="gallery-welcome animate-fade-in">
+                <h1>Welcome, <span id="clientName">Guest</span></h1>
+                <p>Your personalized gallery</p>
+            </div>
+            <div class="gallery-actions animate-fade-in">
+                <button class="btn btn-secondary" id="selectModeBtn">Select Multiple</button>
+                <button class="btn btn-primary" id="downloadAllBtn">Download All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Controls -->
+    <section class="gallery-controls" id="galleryControls" style="display: none;">
+        <div class="container">
+            <div class="selection-info">
+                <span id="selectionCount">0 items selected</span>
+            </div>
+            <div class="selection-actions">
+                <button class="btn btn-outline" id="selectAllBtn">Select All</button>
+                <button class="btn btn-outline" id="deselectAllBtn">Deselect All</button>
+                <button class="btn btn-primary" id="downloadSelectedBtn">Download Selected</button>
+                <button class="btn btn-secondary" id="cancelSelectBtn">Cancel</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Gallery items will be loaded dynamically -->
+            </div>
+
+            <div id="galleryEmpty" class="gallery-empty" style="display: none;">
+                <div class="empty-icon">📷</div>
+                <h2>No media found</h2>
+                <p>Your gallery is currently empty or still being prepared.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Gallery image">
+            <video id="lightboxVideo" controls style="display: none;">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="lightbox-info">
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            <button class="btn btn-primary btn-small" id="lightboxDownload">Download</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Studio</h3>
+                    <p>Professional Photography & Videography services capturing your precious moments with artistic
+                        excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 info@studiophotography.com</li>
+                        <li>📱 +1 (555) 123-4567</li>
+                        <li>📍 123 Creative Ave, Studio City</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">👥</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

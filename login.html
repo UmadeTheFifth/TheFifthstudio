@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to access your personalized photography and videography gallery">
+    <title>Client Login - Studio Photography & Videography</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="login.html" class="active login-link">Login</a></li>
+                </ul>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-box animate-fade-in">
+                <div class="login-header">
+                    <h1>Welcome Back</h1>
+                    <p>Login to access your personalized gallery</p>
+                </div>
+
+                <form id="loginForm" class="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="email" required placeholder="your.email@example.com"
+                            autocomplete="email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="loginPassword" name="password" required
+                                placeholder="Enter your password" autocomplete="current-password">
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Remember me for 30 days</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-full-width">
+                        Login to Gallery
+                    </button>
+
+                    <div class="form-message" id="loginMessage"></div>
+                </form>
+
+                <div class="login-footer">
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                    <p class="help-text">Need help? <a href="help.html">Visit our Help Center</a></p>
+                </div>
+
+                <div class="demo-credentials">
+                    <p class="demo-title">Demo Credentials:</p>
+                    <div class="demo-accounts">
+                        <div class="demo-account">
+                            <strong>Client 1:</strong>
+                            <span>john.doe@email.com / password123</span>
+                        </div>
+                        <div class="demo-account">
+                            <strong>Client 2:</strong>
+                            <span>sarah.smith@email.com / password456</span>
+                        </div>
+                        <div class="demo-account">
+                            <strong>Client 3:</strong>
+                            <span>mike.johnson@email.com / password789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-info animate-fade-in">
+                <div class="info-card">
+                    <div class="info-icon">🔐</div>
+                    <h3>Secure Access</h3>
+                    <p>Your gallery is protected with secure authentication to ensure your photos remain private.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <h3>Access Anywhere</h3>
+                    <p>View and download your photos from any device - desktop, tablet, or mobile.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⬇️</div>
+                    <h3>High-Resolution Downloads</h3>
+                    <p>Download full-resolution images perfect for printing and sharing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Studio</h3>
+                    <p>Professional Photography & Videography services capturing your precious moments with artistic
+                        excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 info@studiophotography.com</li>
+                        <li>📱 +1 (555) 123-4567</li>
+                        <li>📍 123 Creative Ave, Studio City</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">👥</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Password Toggle
+        document.querySelector('.toggle-password').addEventListener('click', function () {
+            const passwordInput = document.getElementById('loginPassword');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            this.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Forgot Password Handler
+        document.querySelector('.forgot-password').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('Please contact support at support@studiophotography.com to reset your password.');
+        });
+    </script>
+</body>
+
+</html>
