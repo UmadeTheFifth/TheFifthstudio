@@ -11,6 +11,7 @@
   <title>Studio - Premium Photography & Videography</title>
 
   <!-- CSS Files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/navbar.css">
@@ -25,6 +26,7 @@
         <a href="index.html">
           <img src="logo.png" alt="Studio Logo" class="brand-logo"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+          <span class="brand-text" style="display: none;">Studio</span>
         </a>
       </div>
 
@@ -37,7 +39,7 @@
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="help.html">Help</a></li>
@@ -58,7 +60,7 @@
       <h1 class="hero-title">Capturing Life's<br>Artful Moments</h1>
       <p class="hero-subtitle">Editorial Photography & Cinematic Videography</p>
       <div class="hero-buttons">
-        <a href="gallery.html" class="btn btn-primary">View Gallery</a>
+        <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
         <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
       </div>
     </div>
@@ -73,16 +75,27 @@
     <div class="carousel-container">
       <div class="carousel-track" id="carouselTrack">
         <div class="carousel-slide">
-          <div class="carousel-image">Wedding Photography</div>
+          <img src="wedding3.jpg" alt="Wedding Photography"
+            class="carousel-image">
         </div>
         <div class="carousel-slide">
-          <div class="carousel-image">Portrait Sessions</div>
+          <img src="dance.jpg" alt="Portrait Photography"
+            class="carousel-image">
         </div>
         <div class="carousel-slide">
-          <div class="carousel-image">Editorial Work</div>
+          <img src="carousel.jpg" alt="Event Photography"
+            class="carousel-image">
+        </div><div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Wedding Photography"
+            class="carousel-image">
         </div>
         <div class="carousel-slide">
-          <div class="carousel-image">Commercial Projects</div>
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" alt="Portrait Photography"
+            class="carousel-image">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92" alt="Event Photography"
+            class="carousel-image">
         </div>
       </div>
 
@@ -102,41 +115,34 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.1s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Weddings</p>
-          </div>
+        <div class="gallery-item animate-on-scroll">
+        <img src="wedding2.jpeg" style="animation-delay: 0.2s" />
+          <p>Weddings</p>
         </div>
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.2s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Portraits</p>
-          </div>
+
+        <div class="gallery-item animate-on-scroll">
+          <img src="lady.jpeg"  style="animation-delay: 0.2s" />
+            <p>Portraits</p>   
         </div>
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.3s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Editorial</p>
-          </div>
+
+        <div class="gallery-item animate-on-scroll">
+          <img src="model4.jpeg" style="animation-delay: 0.2s" />
+          <p>Editorial</p>
         </div>
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.4s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Lifestyle</p>
-          </div>
+
+        <div class="gallery-item animate-on-scroll">
+          <img src="convocation.jpeg" style="animation-delay: 0.2s" />
+          <p>Lifestyle</p>
         </div>
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.5s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Commercial</p>
-          </div>
+        
+        <div class="gallery-item animate-on-scroll">
+          <img src="spa.jpeg" style="animation-delay: 0.2s" />
+          <p>commercial</p>
         </div>
-        <div class="gallery-item animate-on-scroll" style="animation-delay: 0.6s">
-          <div class="gallery-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Events</p>
-          </div>
+
+        <div class="gallery-item animate-on-scroll">
+          <img src="culture.JPEG" style="animation-delay: 0.2s" />
+          <p>Events</p>
         </div>
       </div>
 
@@ -162,8 +168,7 @@
         </div>
         <div class="about-image animate-on-scroll">
           <div class="image-placeholder">
-            <span class="placeholder-icon">—</span>
-            <p>Studio Space</p>
+            <img src="convocation2.jpeg"/>
           </div>
         </div>
       </div>
@@ -239,23 +244,26 @@
         <div class="footer-section">
           <h3>Contact</h3>
           <ul>
-            <li>hello@studiophotography.com</li>
-            <li>+1 (555) 123-4567</li>
-            <li>123 Creative Avenue<br>Studio City, SC 12345</li>
+            <li>thefifthstudios.ng@gmail.com</li>
+            <li>+234 9159648859</li>
+            <li>Amaechi School road<br>Rumuosi, Rivers State</li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Connect</h3>
           <div class="social-links">
-            <a href="#" aria-label="Instagram">In</a>
-            <a href="#" aria-label="Facebook">Fb</a>
-            <a href="#" aria-label="Pinterest">Pi</a>
-            <a href="#" aria-label="Vimeo">Vi</a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+        <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.85rem;">
+          <a href="admin-login.html" style="color: var(--muted-text);">Admin Access</a>
+        </p>
       </div>
     </div>
   </footer>

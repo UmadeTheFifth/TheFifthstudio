@@ -1,0 +1,175 @@
+<div class="demo-credentials">
+    <p class="demo-title">🔑 Demo Admin Credentials:</p>
+    <div class="demo-accounts">
+        <div class="demo-account">
+            <strong>Admin Account:</strong>
+            <span>admin@studio.com / Admin123!</span>
+        </div>
+        <div class="demo-account">
+            <strong>Super Admin:</strong>
+            <span>superadmin@studio.com / SuperAdmin123!</span>
+        </div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--muted-text); text-align: center;">
+        💡 Copy and paste these credentials to login
+    </p>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Login - Studio Management System">
+    <title>Admin Login - Studio</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="brand-text" style="display: none;">Studio</span>
+                </a>
+            </div>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">◐</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Admin Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-box animate-fade-in">
+                <div class="login-header">
+                    <h1>Admin Access</h1>
+                    <p>Sign in to manage your studio</p>
+                </div>
+
+                <form id="adminLoginForm" class="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="adminLoginEmail">Email Address</label>
+                        <input type="email" id="adminLoginEmail" name="email" required placeholder="admin@studio.com"
+                            autocomplete="email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminLoginPassword">Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="adminLoginPassword" name="password" required
+                                placeholder="Enter your password" autocomplete="current-password">
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Keep me signed in</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-full-width">
+                        Sign In to Dashboard
+                    </button>
+
+                    <div class="form-message" id="loginMessage"></div>
+                </form>
+
+                <div class="login-footer">
+                    <a href="#" class="forgot-password" id="forgotPasswordLink">Forgot your password?</a>
+                    <p class="help-text">Client login? <a href="login.html">Click here</a></p>
+                </div>
+            </div>
+
+            <div class="login-info animate-fade-in">
+                <div class="info-card">
+                    <div class="info-icon">🔐</div>
+                    <h3>Secure Admin Panel</h3>
+                    <p>Full control over client galleries, image uploads, and website settings.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📤</div>
+                    <h3>Easy Image Management</h3>
+                    <p>Upload, organize, and manage client photos with drag-and-drop simplicity.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">👥</div>
+                    <h3>Client Control</h3>
+                    <p>Create client accounts, manage access, and organize galleries efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+
+    <!-- USE THIS FOR STANDALONE (NO FIREBASE) -->
+    <script src="js/admin-auth-standalone.js"></script>
+
+    <!-- USE THIS WHEN FIREBASE IS READY -->
+    <!-- <script type="module" src="firebase-config.js"></script> -->
+    <!-- <script type="module" src="js/admin-auth.js"></script> -->
+
+    <script>
+        // Password Toggle
+        document.querySelector('.toggle-password').addEventListener('click', function () {
+            const passwordInput = document.getElementById('adminLoginPassword');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            this.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Forgot Password Handler
+        document.getElementById('forgotPasswordLink').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('adminLoginEmail').value;
+            if (!email) {
+                alert('Please enter your email address first.');
+                return;
+            }
+
+            // Import Firebase auth functions
+            import('./firebase-config.js').then(({ auth }) => {
+                import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js').then(({ sendPasswordResetEmail }) => {
+                    sendPasswordResetEmail(auth, email)
+                        .then(() => {
+                            alert('Password reset email sent! Check your inbox.');
+                        })
+                        .catch((error) => {
+                            alert('Error: ' + error.message);
+                        });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

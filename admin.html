@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard - Studio Management">
+    <title>Admin Dashboard - Studio</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="brand-text" style="display: none;">Studio</span>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                    <li><a href="#" id="adminLogout" class="logout-link">Logout</a></li>
+                </ul>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-user-info">
+                <div class="admin-avatar">A</div>
+                <div class="admin-details">
+                    <h3 id="adminName">Admin</h3>
+                    <p id="adminEmail">admin@studio.com</p>
+                </div>
+            </div>
+
+            <nav class="admin-nav">
+                <button class="admin-nav-item active" data-section="clients">
+                    <span class="nav-icon">👥</span>
+                    <span>Clients</span>
+                </button>
+                <button class="admin-nav-item" data-section="client-upload">
+                    <span class="nav-icon">📤</span>
+                    <span>Client Images</span>
+                </button>
+                <button class="admin-nav-item" data-section="portfolio">
+                    <span class="nav-icon">🖼️</span>
+                    <span>Company Portfolio</span>
+                </button>
+                <button class="admin-nav-item" data-section="carousel">
+                    <span class="nav-icon">🎬</span>
+                    <span>Carousel</span>
+                </button>
+                <button class="admin-nav-item" data-section="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Clients Section -->
+            <section id="clients-section" class="admin-section active">
+                <div class="section-header">
+                    <h1>Client Management</h1>
+                    <button class="btn btn-primary" id="addClientBtn">+ Add New Client</button>
+                </div>
+
+                <div class="clients-grid" id="clientsGrid">
+                    <!-- Clients will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Client Upload Section -->
+            <section id="client-upload-section" class="admin-section">
+                <div class="section-header">
+                    <h1>Upload to Client Gallery</h1>
+                    <p class="section-subtitle">Upload images directly to a specific client's private gallery</p>
+                </div>
+
+                <div class="upload-container">
+                    <div class="form-group">
+                        <label for="uploadClient">Select Client *</label>
+                        <select id="uploadClient" class="form-control">
+                            <option value="">Choose a client...</option>
+                        </select>
+                    </div>
+
+                    <div class="upload-zone" id="clientUploadZone">
+                        <input type="file" id="clientFileInput" accept="image/*,video/*" multiple hidden>
+                        <div class="upload-icon">📁</div>
+                        <h3>Drag & Drop Client Files Here</h3>
+                        <p>or click to browse</p>
+                        <p class="upload-info">These images will be added to the client's private gallery</p>
+                        <p class="upload-info">Supports: JPG, PNG, MP4 (Max 10MB per file)</p>
+                    </div>
+
+                    <div class="upload-progress" id="clientUploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="clientProgressFill"></div>
+                        </div>
+                        <p id="clientProgressText">Uploading...</p>
+                    </div>
+
+                    <div class="uploaded-files" id="clientUploadedFiles"></div>
+                </div>
+            </section>
+
+            <!-- Company Portfolio Section -->
+            <section id="portfolio-section" class="admin-section">
+                <div class="section-header">
+                    <h1>Company Portfolio</h1>
+                    <p class="section-subtitle">Manage your public portfolio (visible to everyone on portfolio page)</p>
+                </div>
+
+                <div class="upload-container">
+                    <div class="portfolio-upload-zone" id="portfolioUploadZone">
+                        <input type="file" id="portfolioFileInput" accept="image/*,video/*" multiple hidden>
+                        <div class="upload-icon">🖼️</div>
+                        <h3>Upload Portfolio Images</h3>
+                        <p>These images will appear in your public portfolio</p>
+                    </div>
+
+                    <div class="portfolio-form" id="portfolioForm" style="display: none;">
+                        <h3>Add Image Details</h3>
+                        <div class="form-group">
+                            <label for="portfolioTitle">Title *</label>
+                            <input type="text" id="portfolioTitle" class="form-control"
+                                placeholder="e.g., Elegant Wedding Ceremony">
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolioCategory">Category *</label>
+                            <select id="portfolioCategory" class="form-control">
+                                <option value="">Select category...</option>
+                                <option value="weddings">Weddings</option>
+                                <option value="portraits">Portraits</option>
+                                <option value="events">Events</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="editorial">Editorial</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="addToPortfolioBtn">Add to Portfolio</button>
+                        <button class="btn btn-secondary" id="cancelPortfolioBtn">Cancel</button>
+                    </div>
+
+                    <div class="portfolio-grid-admin" id="portfolioGridAdmin">
+                        <!-- Portfolio images will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carousel Section -->
+            <section id="carousel-section" class="admin-section">
+                <div class="section-header">
+                    <h1>Homepage Carousel</h1>
+                    <p class="section-subtitle">Manage carousel images (recommended: 1920x1080)</p>
+                </div>
+
+                <div class="carousel-manager">
+                    <div class="carousel-upload-zone" id="carouselUploadZone">
+                        <input type="file" id="carouselFileInput" accept="image/*" multiple hidden>
+                        <div class="upload-icon">🎬</div>
+                        <h3>Upload Carousel Images</h3>
+                        <p>Click to browse</p>
+                    </div>
+
+                    <div class="carousel-images-grid" id="carouselImagesGrid">
+                        <!-- Carousel images will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="admin-section">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                    <p class="section-subtitle">Manage admin account and website settings</p>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <h3>Account Settings</h3>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="settingsEmail" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Change Password</label>
+                            <button class="btn btn-outline" id="changePasswordBtn">Update Password</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Website Settings</h3>
+                        <div class="form-group">
+                            <label>Studio Name</label>
+                            <input type="text" id="studioName" class="form-control"
+                                placeholder="Studio Photography & Videography">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Email</label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="hello@studio.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Phone</label>
+                            <input type="tel" id="contactPhone" class="form-control" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <button class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Client Modal -->
+    <div class="modal" id="addClientModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Client</h2>
+                <button class="modal-close" id="closeAddClientModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addClientForm">
+                    <div class="form-group">
+                        <label for="clientName">Client Name *</label>
+                        <input type="text" id="clientName" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Email *</label>
+                        <input type="email" id="clientEmail" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPassword">Password *</label>
+                        <input type="password" id="clientPassword" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionType">Session Type</label>
+                        <select id="sessionType" class="form-control">
+                            <option value="Wedding">Wedding</option>
+                            <option value="Portrait">Portrait</option>
+                            <option value="Event">Event</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Family">Family</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionDate">Session Date</label>
+                        <input type="date" id="sessionDate" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelAddClient">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Client</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Client Modal -->
+    <div class="modal" id="viewClientModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="viewClientTitle">Client Gallery</h2>
+                <button class="modal-close" id="closeViewClientModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="client-gallery" id="clientGalleryGrid">
+                    <!-- Client images will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <!-- USE THIS FOR STANDALONE (NO FIREBASE) -->
+    <script src="js/admin-auth-standalone.js"></script>
+    <script src="js/admin-dashboard-standalone.js"></script>
+
+    <!-- USE THIS WHEN FIREBASE IS READY -->
+    <!-- <script type="module" src="firebase-config.js"></script> -->
+    <!-- <script type="module" src="js/admin-auth.js"></script> -->
+    <!-- <script type="module" src="js/admin-dashboard.js"></script> -->
+</body>
+
+</html>

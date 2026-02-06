@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Our finest photography and videography work">
+    <title>Portfolio - Studio Photography & Videography</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="logo.png" alt="Studio Logo" class="brand-logo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                    <span class="brand-text" style="display: none;">Studio</span>
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="login.html" class="login-link">Client Login</a></li>
+                </ul>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-fade-in">Our Portfolio</h1>
+            <p class="page-subtitle animate-fade-in">A curated collection of our finest work</p>
+        </div>
+    </section>
+
+    <!-- Filter Categories -->
+    <section class="portfolio-filters">
+        <div class="container">
+            <div class="filter-buttons animate-on-scroll">
+                <button class="filter-btn active" data-category="all">All Work</button>
+                <button class="filter-btn" data-category="weddings">Weddings</button>
+                <button class="filter-btn" data-category="portraits">Portraits</button>
+                <button class="filter-btn" data-category="events">Events</button>
+                <button class="filter-btn" data-category="commercial">Commercial</button>
+                <button class="filter-btn" data-category="editorial">Editorial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Company portfolio images will be loaded here -->
+            </div>
+
+            <div id="portfolioEmpty" class="gallery-empty" style="display: none;">
+                <div class="empty-icon">—</div>
+                <h2>Portfolio Coming Soon</h2>
+                <p>We're curating our finest work. Check back soon!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Portfolio image">
+            <video id="lightboxVideo" controls style="display: none;">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="lightbox-info">
+            <div class="lightbox-details">
+                <h3 id="lightboxTitle">Image Title</h3>
+                <p id="lightboxCategory">Category</p>
+            </div>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Ready to Work Together?</p>
+                <h2>Let's Create Something Beautiful</h2>
+                <p>Contact us to discuss your vision and start your project</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo.png" alt="Studio Logo" class="brand-logo"
+                        style="margin-bottom: 1.5rem; opacity: 0.8;" onerror="this.style.display='none';">
+                    <p>Premium photography and videography services for discerning clients who value artistry,
+                        authenticity, and timeless visual storytelling.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="help.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>thefifthstudios.ng@gmail.com</li>
+                        <li>+234 9159648859</li>
+                        <li>Amaechi School road<br>Rumuosi, Rivers State</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Studio Photography & Videography. All rights reserved.</p>
+                <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.85rem;">
+                    <a href="admin-login.html" style="color: var(--muted-text);">Admin Access</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
